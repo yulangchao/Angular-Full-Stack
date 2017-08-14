@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-fluid">
 
-  <nav class="navbar navbar-dark bg-primary">
+  <nav class="navbar navbar-dark bg-primary navbar-fixed-top">
     <div class="nav navbar-nav">
       <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <i class="fa fa-home"></i> Home
@@ -27,5 +27,20 @@
   </nav>
 
   <router-outlet></router-outlet>
-
+  <nav class="navbar navbar-fixed-bottom footer">
+    <div class="nav navbar-nav">
+      <a routerLink="/" class="col-md-3" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="fa fa-home"></i> Home
+      </a>
+      <a routerLink="/cats" class="col-md-3" routerLinkActive="active">
+        <i class="fa fa-list"></i> Cats
+      </a>
+      <a routerLink="/login" class="col-md-3" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <i class="fa fa-sign-in"></i> Login
+      </a>
+      <a routerLink="/register" class="col-md-3" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <i class="fa fa-user-plus"></i> Register
+      </a>
+    </div>
+  </nav>
 </div>
